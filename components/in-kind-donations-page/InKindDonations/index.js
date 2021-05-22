@@ -2,6 +2,7 @@ import React from 'react';
 import { Paragraph } from '../../../styles/shared';
 import Hero from '../../shared/Hero';
 import InfoSection from '../../shared/InfoSection';
+import Services from '../Services';
 
 const InKindDonations = () => {
     return (
@@ -15,6 +16,7 @@ const InKindDonations = () => {
                     like to contribute, please contact us.
                 </Paragraph>
             </InfoSection>
+            <Services />
         </>
     );
 };

@@ -6,7 +6,7 @@ export const TextGrid = styled.div`
         display: flex;
 
         & > ${Paragraph} {
-            text-align: left;
+            text-align: left !important;
         }
 
         & > p:first-child {

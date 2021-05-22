@@ -8,9 +8,6 @@ const Layout = ({ children }) => {
     console.log(router.pathname);
     return (
         <S.AppContainer>
-            {/* <S.HeroContainer showImage={router.pathname !== '/donate'}>
-                <NavBar withHeroImage={router.pathname !== '/donate'} />
-            </S.HeroContainer> */}
             {children}
             <Footer />
         </S.AppContainer>

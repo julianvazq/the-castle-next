@@ -7,7 +7,7 @@ import * as S from './style';
 const NavBar = ({ withHeroImage }) => {
     const width = useViewportWidth();
 
-    if (width < 700) {
+    if (width < 800) {
         return <MobileNav withHeroImage={withHeroImage} />;
     }
 

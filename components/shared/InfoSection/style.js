@@ -8,5 +8,10 @@ export const Content = styled.div`
         & ${SectionHeader}, & ${Paragraph} {
             text-align: center;
         }
+
+        & ${Paragraph} {
+            max-width: 700px;
+            margin: 0 auto;
+        }
     }
 `;
