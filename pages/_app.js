@@ -1,5 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Layout from '../components/shared/Layout';
+import '../styles/styles.css';
 
 const GlobalStyle = createGlobalStyle`
   body {
