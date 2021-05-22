@@ -26,19 +26,19 @@ export const DesktopServicesContainer = styled.section`
     grid-row-gap: 2rem;
 `;
 
-export const DesktopService = styled.article`
+export const DesktopService = styled.figure`
     display: flex;
     flex-direction: column;
     align-items: center;
 
     img {
         margin-bottom: 1rem;
-        max-height: 200px;
+        height: 200px;
         width: 100%;
         object-fit: cover;
     }
 
-    p {
+    figcaption {
         ${mulishFont}
         font-weight: 700;
         text-align: center;

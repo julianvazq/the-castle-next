@@ -22,7 +22,7 @@ const Services = () => {
                 {services.map((s) => (
                     <S.DesktopService key={s.text}>
                         <img src={s.src} alt={`Service: ${s.text} `} />
-                        <p>{s.text}</p>
+                        <figcaption>{s.text}</figcaption>
                     </S.DesktopService>
                 ))}
             </S.DesktopServicesContainer>
@@ -33,55 +33,59 @@ const Services = () => {
 const services = [
     {
         text: 'Plumbing',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/plumbing.jpg',
     },
     {
         text: 'Electrical',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/electrical.jpg',
     },
     {
         text: 'Heating, Ventilation & Air Conditioning',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/ventilation.jpeg',
     },
     {
         text: 'Insulation',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/insulation.jpg',
     },
     {
         text: 'Wood Refinishing',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/wood.jpeg',
     },
     {
         text: 'Lighting',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/lighting.jpg',
     },
     {
         text: 'Paving',
-        src: '/assets/castle-sm.jpg',
+        src: '',
+    },
+    {
+        text: 'Landscape',
+        src: '/assets/services/grass.jpeg',
     },
     {
         text: 'Construction Materials',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/materials.jpg',
     },
     {
         text: 'Roofing',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/roofing.jpg',
     },
     {
         text: 'Doors and Windows',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/door.jpg',
     },
     {
         text: 'Andio Visual Equipment',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/audio.jpg',
     },
     {
         text: 'Tables & Chairs',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/chairs.jpg',
     },
     {
         text: 'Flatware & Dinnerware',
-        src: '/assets/castle-sm.jpg',
+        src: '/assets/services/plates.jpg',
     },
 ];
 
