@@ -1,0 +1,46 @@
+import React from 'react';
+import {
+    MaxWidthContainer,
+    Paragraph,
+    SectionHeader,
+} from '../../../styles/shared';
+import * as S from './style';
+
+const InfoSection = () => {
+    return (
+        <MaxWidthContainer>
+            <S.Content>
+                <SectionHeader>
+                    The Castle. Bringing the community together.
+                </SectionHeader>
+                <S.TextGrid>
+                    <Paragraph>
+                        The Castle named for its royal like visual appearance
+                        will be a one of a kind multi-use facility that will
+                        host a variety of community centered activities which
+                        provide an arena for professional development, awareness
+                        building (jobs, health, nutrition, etc.) and social
+                        engagement. This ultra-sophisticated, uniquely styled
+                        venue will provide guests an experience that is both
+                        elegant and legendary. <br />
+                        <span>You are Prince. You are Princess.</span>
+                    </Paragraph>
+                    <Paragraph>
+                        The Castle is in the heart and soul of Syracuse, New
+                        York known as the Southside. This primarily residential
+                        neighborhood with several commercial corridors is prime
+                        for redevelopment. The Castle is a catalyst for an
+                        economic renaissance materializing in this Southside
+                        neighborhood, an area deemed as having the highest
+                        concentration of poverty among Black and Hispanics. The
+                        Castle will greatly impact the rejuvenation of this area
+                        resulting in economic development, job creation and
+                        uplifting social interaction.
+                    </Paragraph>
+                </S.TextGrid>
+            </S.Content>
+        </MaxWidthContainer>
+    );
+};
+
+export default InfoSection;

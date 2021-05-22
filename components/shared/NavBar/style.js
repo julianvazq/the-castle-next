@@ -2,26 +2,24 @@ import styled from 'styled-components';
 import { mulishFont, uppercase } from '../../../styles/shared';
 import { DonateContainer } from '../../donate-page/Donate/styled';
 
-export const Nav = styled.nav``;
+export const Nav = styled.nav`
+    max-width: 1100px;
+    margin: 0 auto;
+`;
 
 export const InnerContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
 
     @media screen and (min-width: 700px) {
         flex-direction: row;
     }
 `;
 
-export const Logo = styled.div`
-    height: 100px;
-    width: 100px;
-    margin: 0 2rem 2rem 0;
-    background: violet;
-`;
+export const Logo = styled.img``;
 
 export const LinkContainer = styled.section`
     display: flex;

@@ -1,5 +1,6 @@
 import useViewportWidth from '../../../hooks/useViewportWidth';
 import Hero from '../../shared/Hero';
+import InfoSection from '../InfoSection';
 
 export default function Home() {
     const width = useViewportWidth();
@@ -13,5 +14,10 @@ export default function Home() {
         );
     }
 
-    return <Hero title={title} />;
+    return (
+        <>
+            <Hero title={title} />
+            <InfoSection />
+        </>
+    );
 }

@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const uppercase = css`
     text-transform: uppercase;
@@ -15,4 +15,30 @@ export const cookieFont = css`
 
 export const mulishFont = css`
     font-family: 'Mulish', sans-serif;
+`;
+
+export const MaxWidthContainer = styled.div`
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: ${(props) => props.$padding || '0'};
+    background: ${(props) => props.background || 'none'};
+`;
+
+export const SectionHeader = styled.h2`
+    ${playfairDisplayFont}
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+`;
+
+export const Paragraph = styled.p`
+    line-height: 1.7;
+
+    &:not(:last-of-type) {
+        margin-bottom: 1rem;
+    }
+
+    span {
+        font-weight: 600;
+    }
 `;

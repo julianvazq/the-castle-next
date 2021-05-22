@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import Footer from '../Footer';
 import * as S from './style';
 
 const Layout = ({ children }) => {
@@ -11,6 +12,7 @@ const Layout = ({ children }) => {
                 <NavBar withHeroImage={router.pathname !== '/donate'} />
             </S.HeroContainer> */}
             {children}
+            <Footer />
         </S.AppContainer>
     );
 };

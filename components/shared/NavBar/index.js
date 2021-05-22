@@ -14,7 +14,7 @@ const NavBar = ({ withHeroImage }) => {
     return (
         <S.Nav>
             <S.InnerContainer>
-                <S.Logo></S.Logo>
+                <S.Logo src='/assets/logo.svg' />
                 <S.LinkContainer>
                     <S.RegularLinks $withHeroImage={withHeroImage}>
                         <Link href='/'>
