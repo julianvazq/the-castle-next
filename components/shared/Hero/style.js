@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { cookieFont } from '../../../styles/shared';
 
 export const Container = styled.section`
-    /* display: flex;
-    flex-direction: column; */
     background-image: url('/assets/castle-sm.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,6 +9,7 @@ export const Container = styled.section`
 
     @media screen and (min-width: 700px) {
         background-image: url('/assets/castle-lg.jpg');
+        background-position: center;
         height: 500px;
         min-height: auto;
     }
@@ -19,11 +18,6 @@ export const Container = styled.section`
 export const TitleContainer = styled.div`
     margin: 4rem auto;
     padding: 0 1.5rem;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1; */
 `;
 
 export const Title = styled.h1`

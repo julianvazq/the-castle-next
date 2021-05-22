@@ -2,7 +2,7 @@ import { CgClose } from 'react-icons/cg';
 import { RiMenu4Fill } from 'react-icons/ri';
 import styled from 'styled-components';
 import { cookieFont, mulishFont, uppercase } from '../../../styles/shared';
-import { DonateContainer } from '../../donate-page/Donate/styled';
+import { DonateContainer } from '../../donate-page/Donate/style';
 
 export const ClosedNav = styled.nav`
     display: flex;
@@ -15,7 +15,7 @@ export const OpenNav = styled.nav`
     display: block;
     padding: 1rem 1.5rem 2rem;
     background: var(--purple-1);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

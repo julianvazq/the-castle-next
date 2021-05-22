@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mulishFont, uppercase } from '../../../styles/shared';
-import { DonateContainer } from '../../donate-page/Donate/styled';
+import { DonateContainer } from '../../donate-page/Donate/style';
 
 export const Nav = styled.nav`
     max-width: 1100px;

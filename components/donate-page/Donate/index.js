@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from '../../shared/NavBar';
-import * as S from './styled';
+import * as S from './style';
 
 const Donate = () => {
     return (

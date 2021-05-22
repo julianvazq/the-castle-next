@@ -33,6 +33,7 @@ export const SectionHeader = styled.h2`
 
 export const Paragraph = styled.p`
     line-height: 1.7;
+    max-width: ${(props) => props.$maxWidth};
 
     &:not(:last-of-type) {
         margin-bottom: 1rem;
@@ -40,5 +41,8 @@ export const Paragraph = styled.p`
 
     span {
         font-weight: 600;
+    }
+
+    @media screen and (min-width: 700px) {
     }
 `;
