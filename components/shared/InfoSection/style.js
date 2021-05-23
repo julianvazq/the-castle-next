@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Paragraph, SectionHeader } from '../../../styles/shared';
 
 export const Content = styled.div`
-    padding: 4rem 1.5rem;
+    padding: 3.75rem 1.5rem 4rem;
 
     @media screen and (min-width: 800px) {
         & ${SectionHeader}, & ${Paragraph} {
@@ -11,7 +11,8 @@ export const Content = styled.div`
 
         & ${Paragraph} {
             max-width: 700px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 `;

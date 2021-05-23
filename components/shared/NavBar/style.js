@@ -5,6 +5,7 @@ import { DonateContainer } from '../../donate-page/Donate/style';
 export const Nav = styled.nav`
     max-width: 1100px;
     margin: 0 auto;
+    height: 150px;
 `;
 
 export const InnerContainer = styled.div`

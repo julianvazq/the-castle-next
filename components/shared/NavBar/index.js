@@ -4,11 +4,11 @@ import useViewportWidth from '../../../hooks/useViewportWidth';
 import MobileNav from '../MobileNav';
 import * as S from './style';
 
-const NavBar = ({ withHeroImage }) => {
+const NavBar = () => {
     const width = useViewportWidth();
 
     if (width < 800) {
-        return <MobileNav withHeroImage={withHeroImage} />;
+        return <MobileNav />;
     }
 
     return (
@@ -16,7 +16,7 @@ const NavBar = ({ withHeroImage }) => {
             <S.InnerContainer>
                 <S.Logo src='/assets/logo.svg' />
                 <S.LinkContainer>
-                    <S.RegularLinks $withHeroImage={withHeroImage}>
+                    <S.RegularLinks>
                         <Link href='/'>
                             <a>Home</a>
                         </Link>

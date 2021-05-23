@@ -6,7 +6,7 @@ import * as S from './style';
 const Services = () => {
     const width = useViewportWidth();
 
-    if (width < 700) {
+    if (width < 600) {
         return (
             <S.MobileServicesContainer>
                 {services.map((s) => (

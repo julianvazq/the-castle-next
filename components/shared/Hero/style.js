@@ -16,8 +16,9 @@ export const Container = styled.section`
 `;
 
 export const TitleContainer = styled.div`
-    margin: 4rem auto;
-    padding: 0 1.5rem;
+    /* margin: 4rem auto; */
+    /* padding: 0 1.5rem; */
+    padding: 4rem 1.5rem;
 `;
 
 export const Title = styled.h1`

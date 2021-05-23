@@ -42,7 +42,4 @@ export const Paragraph = styled.p`
     span {
         font-weight: 600;
     }
-
-    @media screen and (min-width: 700px) {
-    }
 `;
