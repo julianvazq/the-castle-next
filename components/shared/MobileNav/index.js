@@ -17,7 +17,11 @@ const MobileNav = () => {
         return (
             <S.OpenNav>
                 <S.InnerContainer>
-                    <S.Logo src='/assets/logo.svg' />
+                    <Link href='/'>
+                        <a>
+                            <S.Logo src='/assets/logo.svg' />
+                        </a>
+                    </Link>
                     <S.MenuButton onClick={() => setOpen(false)}>
                         <S.Close />
                     </S.MenuButton>
@@ -44,7 +48,11 @@ const MobileNav = () => {
 
     return (
         <S.ClosedNav>
-            <S.Logo src='/assets/logo.svg' />
+            <Link href='/'>
+                <a>
+                    <S.Logo src='/assets/logo.svg' />
+                </a>
+            </Link>
             <S.MenuButton onClick={() => setOpen(true)}>
                 <S.Burger />
             </S.MenuButton>

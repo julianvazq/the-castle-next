@@ -14,7 +14,11 @@ const NavBar = () => {
     return (
         <S.Nav>
             <S.InnerContainer>
-                <S.Logo src='/assets/logo.svg' />
+                <Link href='/'>
+                    <a>
+                        <S.Logo src='/assets/logo.svg' />
+                    </a>
+                </Link>
                 <S.LinkContainer>
                     <S.RegularLinks>
                         <Link href='/'>
