@@ -24,6 +24,7 @@ export const OpenNav = styled.nav`
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 999;
 `;
 
 export const InnerContainer = styled.div`
