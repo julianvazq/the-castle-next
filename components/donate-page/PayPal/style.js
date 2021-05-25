@@ -52,7 +52,7 @@ export const Separator = styled.p`
 `;
 
 export const PaymentContainer = styled.div`
-    height: 200px;
+    height: ${(props) => props.$height || '200px'};
     display: ${(props) => props.$display || 'flex'};
     align-items: center;
     justify-content: center;

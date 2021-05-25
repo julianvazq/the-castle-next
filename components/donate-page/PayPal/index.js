@@ -7,6 +7,7 @@ const PayPal = () => {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
     const [amount, setAmount] = useState(0.01);
     const [showSpinner, setShowSpinner] = useState(false);
+    const [paymentHeight, setPaymentHeight] = useState('200px');
     console.log(amount);
 
     useEffect(() => {
@@ -43,10 +44,6 @@ const PayPal = () => {
         });
     };
 
-    const onClick = () => {
-        console.log('clicked button!');
-    };
-
     const onApprove = (data, actions) => {
         return actions.order.capture().then((details) => {
             console.log('onApprove ', details);
@@ -57,6 +54,17 @@ const PayPal = () => {
 
     const onError = (err) => {
         console.log('error', err);
+    };
+
+    const onCancel = (data) => {
+        console.log('cancelled', data);
+        setPaymentHeight('200px');
+    };
+
+    const onClick = ({ fundingSource }) => {
+        if (fundingSource === 'card') {
+            setPaymentHeight('auto');
+        }
     };
 
     return (
@@ -70,17 +78,18 @@ const PayPal = () => {
             <S.Separator>OR</S.Separator>
             <AmountButtons changeAmount={changeAmount} />
             {showSpinner || isPending ? (
-                <S.PaymentContainer>
+                <S.PaymentContainer $height={paymentHeight}>
                     <S.Spinner />
                 </S.PaymentContainer>
             ) : (
-                <S.PaymentContainer $display='block'>
+                <S.PaymentContainer $display='block' $height={paymentHeight}>
                     <PayPalButtons
                         style={{ layout: 'vertical' }}
                         forceReRender={[amount]}
                         createOrder={createOrder}
                         onClick={onClick}
                         onApprove={onApprove}
+                        onCancel={onCancel}
                         onError={onError}
                     />
                 </S.PaymentContainer>
