@@ -1,35 +1,31 @@
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import AmountButtons from '../AmountButtons';
 import * as S from './style';
-
-const amounts = [
-    {
-        amount: 0.01,
-        text: '$0.01',
-    },
-    // {
-    //     amount: 5000,
-    //     text: '$5,000',
-    // },
-    {
-        amount: 15000,
-        text: '$15,000',
-    },
-    {
-        amount: 25000,
-        text: '$25,000',
-    },
-    {
-        amount: 'custom',
-        text: 'Custom',
-    },
-];
 
 const PayPal = () => {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
-    const [amount, setAmount] = useState(amounts[0].amount);
+    const [amount, setAmount] = useState(0.01);
+    const [showSpinner, setShowSpinner] = useState(false);
+    console.log(amount);
+
+    useEffect(() => {
+        setShowSpinner(true);
+        const timeoutId = setTimeout(() => {
+            setShowSpinner(false);
+        }, 500);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [amount]);
+
+    const changeAmount = (amount) => {
+        setAmount(amount);
+    };
 
     const createOrder = async (data, actions) => {
+        console.log(amount);
         return actions.order.create({
             purchase_units: [
                 {
@@ -45,10 +41,6 @@ const PayPal = () => {
                 user_action: 'PAY_NOW',
             },
         });
-        // .then((orderID) => {
-        //     setOrderID(orderID);
-        //     return orderID;
-        // });
     };
 
     const onClick = () => {
@@ -67,12 +59,8 @@ const PayPal = () => {
         console.log('error', err);
     };
 
-    if (isPending) {
-        return 'Loading payment options...';
-    }
-
     return (
-        <S.PaymentContainer>
+        <S.Container>
             <S.PaymentHeader>Payment Method</S.PaymentHeader>
             <S.CheckText>
                 Tax deductible charitable donations can be made by mailing check
@@ -80,14 +68,24 @@ const PayPal = () => {
                 E. Fayette Street Suite 375, Syracuse NY 13202
             </S.CheckText>
             <S.Separator>OR</S.Separator>
-            <PayPalButtons
-                style={{ layout: 'vertical' }}
-                createOrder={createOrder}
-                onClick={onClick}
-                onApprove={onApprove}
-                onError={onError}
-            />
-        </S.PaymentContainer>
+            <AmountButtons changeAmount={changeAmount} />
+            {showSpinner || isPending ? (
+                <S.PaymentContainer>
+                    <S.Spinner />
+                </S.PaymentContainer>
+            ) : (
+                <S.PaymentContainer $display='block'>
+                    <PayPalButtons
+                        style={{ layout: 'vertical' }}
+                        forceReRender={[amount]}
+                        createOrder={createOrder}
+                        onClick={onClick}
+                        onApprove={onApprove}
+                        onError={onError}
+                    />
+                </S.PaymentContainer>
+            )}
+        </S.Container>
     );
 };
 

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { mulishFont, uppercase } from '../../../styles/shared';
 
-export const PaymentContainer = styled.article`
+export const Container = styled.article`
     ${mulishFont}
     display: flex;
     flex-direction: column;
@@ -48,5 +48,37 @@ export const Separator = styled.p`
         height: 1px;
         width: 75px;
         background: var(--purple-4);
+    }
+`;
+
+export const PaymentContainer = styled.div`
+    height: 200px;
+    display: ${(props) => props.$display || 'flex'};
+    align-items: center;
+    justify-content: center;
+`;
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }`;
+
+export const Spinner = styled.div`
+    display: inline-block;
+    height: 80px;
+
+    &:after {
+        content: ' ';
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        border-color: #fff var(--purple-4) #fff var(--purple-4);
+        animation: ${spin} 1.2s linear infinite;
     }
 `;
