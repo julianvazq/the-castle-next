@@ -48,7 +48,7 @@ export const OtherAmountInput = styled.input`
     width: 100%;
     font-weight: 700;
     border-width: 0px;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0 0.5rem;
     border: none;
     outline: none;
     color: var(--purple-4);

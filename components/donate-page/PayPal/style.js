@@ -1,3 +1,4 @@
+import { IoIosCheckmarkCircle } from 'react-icons/io';
 import styled, { keyframes } from 'styled-components';
 import { mulishFont, uppercase } from '../../../styles/shared';
 
@@ -81,4 +82,29 @@ export const Spinner = styled.div`
         border-color: #fff var(--purple-4) #fff var(--purple-4);
         animation: ${spin} 1.2s linear infinite;
     }
+`;
+
+export const Confirmation = styled.p`
+    ${mulishFont}
+    padding: 1rem 1.25rem;
+    background: var(--purple-4);
+    color: var(--white);
+    border-radius: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 650px) {
+        justify-self: flex-start;
+    }
+
+    @media screen and (min-width: 800px) {
+        align-self: center;
+    }
+`;
+
+export const Check = styled(IoIosCheckmarkCircle)`
+    color: var(--white);
+    font-size: 1.25rem;
+    margin-right: 1rem;
 `;

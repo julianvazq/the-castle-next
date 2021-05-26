@@ -6,6 +6,7 @@ import * as S from './style';
 const PayPal = () => {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
     const [amount, setAmount] = useState(0.01);
+    const [payerDetails, setPayerDetails] = useState(null);
     const [showSpinner, setShowSpinner] = useState(false);
     const [paymentHeight, setPaymentHeight] = useState('200px');
     console.log(amount);
@@ -47,8 +48,7 @@ const PayPal = () => {
     const onApprove = (data, actions) => {
         return actions.order.capture().then((details) => {
             console.log('onApprove ', details);
-            // This function shows a transaction success message to your buyer.
-            alert('Transaction completed by ' + details.payer.name.given_name);
+            setPayerDetails(details.payer);
         });
     };
 
@@ -66,6 +66,18 @@ const PayPal = () => {
             setPaymentHeight('auto');
         }
     };
+
+    if (payerDetails) {
+        return (
+            <S.Confirmation>
+                <S.Check />
+                Thank you for your donation
+                {payerDetails?.name?.given_name
+                    ? `, ${payerDetails?.name?.given_name}!`
+                    : '!'}
+            </S.Confirmation>
+        );
+    }
 
     return (
         <S.Container>

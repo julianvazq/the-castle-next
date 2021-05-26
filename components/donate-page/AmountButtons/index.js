@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import * as S from './style';
 
 const AmountButtons = ({ changeAmount }) => {
+    const router = useRouter();
+    const { level } = router.query;
     const [selectedAmount, setSelectedAmount] = useState(0.01);
     const [showOther, setShowOther] = useState(false);
     const [otherAmount, setOtherAmount] = useState('$0');
 
-    const onClick = (amount) => {
+    const onAmountSelection = (amount) => {
         setSelectedAmount(amount);
 
         if (amount === 'other') {
@@ -35,6 +38,23 @@ const AmountButtons = ({ changeAmount }) => {
         changeAmount(numericAmount);
     };
 
+    useEffect(() => {
+        console.log(level);
+        switch (level) {
+            case 'the-chateau':
+                onAmountSelection(5000);
+                break;
+            case 'the-palace':
+                onAmountSelection(15000);
+                break;
+            case 'the-castle':
+                onAmountSelection(25000);
+                break;
+            default:
+                break;
+        }
+    }, [level]);
+
     return (
         <div>
             <S.PaymentText>Pay with credit card or PayPal</S.PaymentText>
@@ -43,7 +63,7 @@ const AmountButtons = ({ changeAmount }) => {
                     <S.AmountButton
                         key={val.amount}
                         $selected={selectedAmount === val.amount}
-                        onClick={() => onClick(val.amount)}
+                        onClick={() => onAmountSelection(val.amount)}
                     >
                         {val.text}
                     </S.AmountButton>
