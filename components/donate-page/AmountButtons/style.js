@@ -4,9 +4,12 @@ import { Paragraph } from '../../../styles/shared';
 export const Container = styled.div`
     display: flex;
     justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
 
-    & > * + * {
-        margin-left: 0.5rem;
+    @media screen and (min-width: 720px) {
+        grid-template-columns: repeat(4, 1fr);
     }
 `;
 

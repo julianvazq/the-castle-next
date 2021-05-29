@@ -8,10 +8,15 @@ const PayPal = () => {
     const [amount, setAmount] = useState(0.01);
     const [payerDetails, setPayerDetails] = useState(null);
     const [showSpinner, setShowSpinner] = useState(false);
+    const [showError, setShowError] = useState(false);
     const [paymentHeight, setPaymentHeight] = useState('200px');
     console.log(amount);
 
     useEffect(() => {
+        if (amount) {
+            setShowError(false);
+        }
+
         setShowSpinner(true);
         const timeoutId = setTimeout(() => {
             setShowSpinner(false);
@@ -62,6 +67,12 @@ const PayPal = () => {
     };
 
     const onClick = ({ fundingSource }) => {
+        console.log('clicked');
+        if (!amount) {
+            setShowError(true);
+            return;
+        }
+
         if (fundingSource === 'card') {
             setPaymentHeight('auto');
         }
@@ -79,22 +90,42 @@ const PayPal = () => {
         );
     }
 
+    if (amount > 10000) {
+        return (
+            <S.Container>
+                <S.PaymentHeader>Payment Method</S.PaymentHeader>
+                <AmountButtons changeAmount={changeAmount} />
+                <S.PaymentDisclaimer>
+                    Donations over $10,000 are to be made via check.
+                </S.PaymentDisclaimer>
+                <S.CheckText>
+                    Tax deductible charitable donations can be made by mailing a
+                    check payable to the Greater Syracuse Land Bank, ATTN: The
+                    Castle, 431 E. Fayette Street Suite 375, Syracuse NY 13202
+                </S.CheckText>
+            </S.Container>
+        );
+    }
+
     return (
         <S.Container>
             <S.PaymentHeader>Payment Method</S.PaymentHeader>
+            <AmountButtons changeAmount={changeAmount} />
             <S.CheckText>
-                Tax deductible charitable donations can be made by mailing check
-                payable to the Greater Syracuse Land Bank, ATTN: The Castle, 431
-                E. Fayette Street Suite 375, Syracuse NY 13202
+                Tax deductible charitable donations can be made by mailing a
+                check payable to the Greater Syracuse Land Bank, ATTN: The
+                Castle, 431 E. Fayette Street Suite 375, Syracuse NY 13202
             </S.CheckText>
             <S.Separator>OR</S.Separator>
-            <AmountButtons changeAmount={changeAmount} />
             {showSpinner || isPending ? (
                 <S.PaymentContainer $height={paymentHeight}>
                     <S.Spinner />
                 </S.PaymentContainer>
             ) : (
                 <S.PaymentContainer $display='block' $height={paymentHeight}>
+                    {showError && (
+                        <S.Error>Please select an amount to continue.</S.Error>
+                    )}
                     <PayPalButtons
                         style={{ layout: 'vertical' }}
                         forceReRender={[amount]}
@@ -103,6 +134,7 @@ const PayPal = () => {
                         onApprove={onApprove}
                         onCancel={onCancel}
                         onError={onError}
+                        disabled={!amount}
                     />
                 </S.PaymentContainer>
             )}

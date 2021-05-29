@@ -14,6 +14,7 @@ const AmountButtons = ({ changeAmount }) => {
 
         if (amount === 'other') {
             setShowOther(true);
+            changeAmount(0);
             return;
         }
 
@@ -57,7 +58,7 @@ const AmountButtons = ({ changeAmount }) => {
 
     return (
         <div>
-            <S.PaymentText>Pay with credit card or PayPal</S.PaymentText>
+            <S.PaymentText>Select amount to see payment options</S.PaymentText>
             <S.Container>
                 {amounts.map((val) => (
                     <S.AmountButton

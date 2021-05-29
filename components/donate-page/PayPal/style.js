@@ -23,6 +23,11 @@ export const PaymentHeader = styled.h3`
 
 export const CheckText = styled.p``;
 
+export const PaymentDisclaimer = styled.p`
+    margin-bottom: -1rem;
+    font-weight: 700;
+`;
+
 export const Separator = styled.p`
     ${mulishFont}
     ${uppercase}
@@ -107,4 +112,13 @@ export const Check = styled(IoIosCheckmarkCircle)`
     color: var(--white);
     font-size: 1.25rem;
     margin-right: 1rem;
+`;
+
+export const Error = styled.p`
+    background: hsl(288deg 45% 36%);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 600;
 `;
