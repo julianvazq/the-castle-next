@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { mulishFont, uppercase } from '../../../styles/shared';
-import { DonateContainer } from '../../donate-page/Donate/style';
 
 export const Nav = styled.nav`
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
     height: 150px;
@@ -41,11 +41,7 @@ export const RegularLinks = styled.div`
     & > * {
         ${uppercase}
         ${mulishFont};
-        color: var(--white);
-
-        ${DonateContainer} & {
-            color: var(--gray);
-        }
+        color: ${(props) => (props.$dark ? 'var(--gray)' : 'var(--white)')};
     }
 
     @media screen and (min-width: 700px) {

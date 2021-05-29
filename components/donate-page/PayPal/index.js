@@ -125,7 +125,9 @@ const PayPal = () => {
             ) : (
                 <S.PaymentContainer $display='block' $height={paymentHeight}>
                     {showError && (
-                        <S.Error>Please select an amount to continue.</S.Error>
+                        <S.Error>
+                            Please enter an amount above to continue.
+                        </S.Error>
                     )}
                     <PayPalButtons
                         style={{ layout: 'vertical' }}

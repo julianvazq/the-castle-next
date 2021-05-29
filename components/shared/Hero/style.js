@@ -3,22 +3,36 @@ import { cookieFont } from '../../../styles/shared';
 
 export const Container = styled.section`
     background-image: url('/assets/castle-sm.jpg');
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 700px;
+    display: flex;
+    flex-direction: column;
 
     @media screen and (min-width: 700px) {
         background-image: url('/assets/castle-lg.jpg');
         background-position: center;
-        height: 500px;
+        height: 600px;
         min-height: auto;
     }
 `;
 
 export const TitleContainer = styled.div`
-    /* margin: 4rem auto; */
-    /* padding: 0 1.5rem; */
-    padding: 4rem 1.5rem;
+    padding: 0 1.5rem;
+    margin-bottom: 4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const InnerContainer = styled.div`
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const Title = styled.h1`
@@ -29,6 +43,10 @@ export const Title = styled.h1`
     color: var(--white);
     margin-bottom: 1rem;
     ${cookieFont};
+
+    @media screen and (min-width: 700px) {
+        font-size: 4.5rem;
+    }
 `;
 
 export const Decoration = styled.img`

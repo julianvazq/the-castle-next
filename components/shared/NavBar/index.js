@@ -28,14 +28,14 @@ const NavBar = ({ withHeroImage }) => {
                     </Link>
                 )}
                 <S.LinkContainer>
-                    <S.RegularLinks>
+                    <S.RegularLinks $dark={!withHeroImage}>
                         <Link href='/'>
                             <a>Home</a>
                         </Link>
                         <Link href='/founders-circle'>
                             <a>Founders Circle</a>
                         </Link>
-                        <Link href='in-kind-donations'>
+                        <Link href='/in-kind-donations'>
                             <a>In-Kind Donations</a>
                         </Link>
                     </S.RegularLinks>

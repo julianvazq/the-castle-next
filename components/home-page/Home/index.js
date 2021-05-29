@@ -6,14 +6,14 @@ import * as S from './style';
 
 export default function Home() {
     const width = useViewportWidth();
-    let title = 'A sophisticated, uniquely styled venue in Syracuse, NY';
+    let title = (
+        <>
+            A sophisticated, uniquely styled venue <br /> in Syracuse, NY
+        </>
+    );
 
-    if (width > 850) {
-        title = (
-            <>
-                A sophisticated, uniquely styled venue <br /> in Syracuse, NY
-            </>
-        );
+    if (width && width < 850) {
+        title = 'A sophisticated, uniquely styled venue in Syracuse, NY';
     }
 
     return (
