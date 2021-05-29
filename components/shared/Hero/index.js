@@ -5,7 +5,7 @@ import * as S from './style';
 const Hero = ({ title }) => {
     return (
         <S.Container>
-            <NavBar />
+            <NavBar withHeroImage />
             <S.TitleContainer>
                 <S.Title>{title}</S.Title>
                 <S.Decoration

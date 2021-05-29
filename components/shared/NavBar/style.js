@@ -21,7 +21,8 @@ export const InnerContainer = styled.div`
 `;
 
 export const Logo = styled.img`
-    max-width: 120px;
+    width: 103px;
+    height: 111px;
 `;
 
 export const LinkContainer = styled.section`

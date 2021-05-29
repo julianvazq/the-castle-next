@@ -115,7 +115,7 @@ export const Check = styled(IoIosCheckmarkCircle)`
 `;
 
 export const Error = styled.p`
-    background: hsl(288deg 45% 36%);
+    background: hsl(288deg 39% 44%);
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 6px;

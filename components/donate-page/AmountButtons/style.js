@@ -26,7 +26,7 @@ export const AmountButton = styled.button`
 
 export const Form = styled.form`
     border: 1px solid var(--purple-4);
-    padding: 0.5rem 0.75rem;
+    padding: 0.25rem 0.75rem 0.5rem 0.75rem;
     margin-top: 1rem;
     border-radius: 6px;
 
@@ -51,7 +51,7 @@ export const OtherAmountInput = styled.input`
     width: 100%;
     font-weight: 700;
     border-width: 0px;
-    padding: 0.25rem 0 0.5rem;
+    padding: 0.25rem 0 0;
     border: none;
     outline: none;
     color: var(--purple-4);

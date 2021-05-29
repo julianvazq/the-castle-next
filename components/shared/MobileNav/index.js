@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import * as S from './style';
 
-const MobileNav = () => {
+const MobileNav = ({ withHeroImage }) => {
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
@@ -48,11 +48,19 @@ const MobileNav = () => {
 
     return (
         <S.ClosedNav>
-            <Link href='/'>
-                <a>
-                    <S.Logo src='/assets/logo-white.svg' />
-                </a>
-            </Link>
+            {withHeroImage ? (
+                <Link href='/'>
+                    <a>
+                        <S.Logo src='/assets/logo-white.svg' />
+                    </a>
+                </Link>
+            ) : (
+                <Link href='/'>
+                    <a>
+                        <S.Logo src='/assets/logo.svg' />
+                    </a>
+                </Link>
+            )}
             <S.MenuButton onClick={() => setOpen(true)}>
                 <S.Burger />
             </S.MenuButton>

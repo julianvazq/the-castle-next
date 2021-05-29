@@ -28,7 +28,7 @@ const Levels = () => {
                     </S.ListItem>
                 </S.List>
                 <S.DonorMin>Donor level minimum of 25K</S.DonorMin>
-                <Link href='/donate' passHref>
+                <Link href='/donate?level=the-castle' passHref>
                     <S.DonateLink>Donate Now</S.DonateLink>
                 </Link>
             </S.GridItem>
@@ -54,7 +54,7 @@ const Levels = () => {
                     </S.ListItem>
                 </S.List>
                 <S.DonorMin>Donor level minimum of 15K</S.DonorMin>
-                <Link href='/donate' passHref>
+                <Link href='/donate?level=the-palace' passHref>
                     <S.DonateLink>Donate Now</S.DonateLink>
                 </Link>
             </S.GridItem>
@@ -71,7 +71,7 @@ const Levels = () => {
                     </S.ListItem>
                 </S.List>
                 <S.DonorMin>Donor level minimum of 5K</S.DonorMin>
-                <Link href='/donate' passHref>
+                <Link href='/donate?level=the-chateau' passHref>
                     <S.DonateLink>Donate Now</S.DonateLink>
                 </Link>
             </S.GridItem>

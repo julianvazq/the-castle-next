@@ -15,6 +15,7 @@ const PayPal = () => {
     useEffect(() => {
         if (amount) {
             setShowError(false);
+            setPaymentHeight('200px');
         }
 
         setShowSpinner(true);
@@ -58,7 +59,7 @@ const PayPal = () => {
     };
 
     const onError = (err) => {
-        console.log('error', err);
+        console.log('payment error', err);
     };
 
     const onCancel = (data) => {
@@ -67,9 +68,9 @@ const PayPal = () => {
     };
 
     const onClick = ({ fundingSource }) => {
-        console.log('clicked');
         if (!amount) {
             setShowError(true);
+            setPaymentHeight('250px');
             return;
         }
 
