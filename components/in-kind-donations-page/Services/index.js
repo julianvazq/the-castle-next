@@ -57,7 +57,7 @@ const services = [
     },
     {
         text: 'Paving',
-        src: '',
+        src: '/assets/services/paving.jpg',
     },
     {
         text: 'Landscape',

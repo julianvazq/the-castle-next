@@ -50,7 +50,7 @@ const MobileNav = () => {
         <S.ClosedNav>
             <Link href='/'>
                 <a>
-                    <S.Logo src='/assets/logo.svg' />
+                    <S.Logo src='/assets/logo-white.svg' />
                 </a>
             </Link>
             <S.MenuButton onClick={() => setOpen(true)}>

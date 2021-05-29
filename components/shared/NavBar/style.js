@@ -20,7 +20,9 @@ export const InnerContainer = styled.div`
     }
 `;
 
-export const Logo = styled.img``;
+export const Logo = styled.img`
+    max-width: 120px;
+`;
 
 export const LinkContainer = styled.section`
     display: flex;

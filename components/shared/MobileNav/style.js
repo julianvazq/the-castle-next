@@ -9,10 +9,6 @@ export const ClosedNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-
-    @media screen and (min-width: 800px) {
-        display: none;
-    }
 `;
 
 export const OpenNav = styled.nav`

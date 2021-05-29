@@ -11,8 +11,10 @@ import * as S from './style';
 
 const initialOptions = {
     // 'client-id': 'sb',
+    // 'client-id':
+    //     'AasQVTEe4oNhdXPBnK2k6e0bbw3kxJZMIHatU8Dt2bGBGEeT_B-bJ6RcmxKqdX_SLG4OXOzMZVOwWH1I',
     'client-id':
-        'AasQVTEe4oNhdXPBnK2k6e0bbw3kxJZMIHatU8Dt2bGBGEeT_B-bJ6RcmxKqdX_SLG4OXOzMZVOwWH1I',
+        'AWK1HJxIagbxdwE-LGJ_qEiDkZ-YexHnqemcKsdREiMzQ7KYHN9H8xR1_G0KkPN3IeNNRouqcfxC3iHu',
     currency: 'USD',
     intent: 'capture',
     // 'data-client-token': 'abc123xyz==',

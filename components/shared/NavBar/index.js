@@ -7,7 +7,7 @@ import * as S from './style';
 const NavBar = () => {
     const width = useViewportWidth();
 
-    if (width < 800) {
+    if (width < 825) {
         return <MobileNav />;
     }
 
@@ -16,7 +16,7 @@ const NavBar = () => {
             <S.InnerContainer>
                 <Link href='/'>
                     <a>
-                        <S.Logo src='/assets/logo.svg' />
+                        <S.Logo src='/assets/logo-white.svg' />
                     </a>
                 </Link>
                 <S.LinkContainer>

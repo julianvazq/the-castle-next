@@ -2,6 +2,7 @@ import React from 'react';
 import { Paragraph } from '../../../styles/shared';
 import Hero from '../../shared/Hero';
 import InfoSection from '../../shared/InfoSection';
+import Levels from './Levels';
 
 const FoundersCircle = () => {
     return (
@@ -20,6 +21,7 @@ const FoundersCircle = () => {
                     access to certain privileges.
                 </Paragraph>
             </InfoSection>
+            <Levels />
         </>
     );
 };
