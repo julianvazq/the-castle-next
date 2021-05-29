@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import * as S from './style';
 
 const MobileNav = ({ withHeroImage }) => {
     const [open, setOpen] = useState(false);
+    const { pathname } = useRouter();
 
     useEffect(() => {
         if (open) {
@@ -12,6 +14,16 @@ const MobileNav = ({ withHeroImage }) => {
             document.body.style.overflow = 'auto';
         }
     }, [open]);
+
+    useEffect(() => {
+        setOpen(false);
+    }, [pathname]);
+
+    const onLinkClick = (clickedPath) => {
+        if (clickedPath === pathname) {
+            setOpen(false);
+        }
+    };
 
     if (open) {
         return (
@@ -28,18 +40,22 @@ const MobileNav = ({ withHeroImage }) => {
                 </S.InnerContainer>
                 <S.LinkContainer>
                     <Link href='/'>
-                        <a>Home</a>
+                        <a onClick={() => onLinkClick('/')}>Home</a>
                     </Link>
                     <Link href='/founders-circle'>
-                        <a>Founders Circle</a>
+                        <a onClick={() => onLinkClick('/founders-circle')}>
+                            Founders Circle
+                        </a>
                     </Link>
-                    <Link href='in-kind-donations'>
-                        <a>In-Kind Donations</a>
+                    <Link href='/in-kind-donations'>
+                        <a onClick={() => onLinkClick('/in-kind-donations')}>
+                            In-Kind Donations
+                        </a>
                     </Link>
                 </S.LinkContainer>
                 <S.DonateLink>
                     <Link href='/donate'>
-                        <a>Donate Now</a>
+                        <a onClick={() => onLinkClick('/donate')}>Donate Now</a>
                     </Link>
                 </S.DonateLink>
             </S.OpenNav>
@@ -62,7 +78,7 @@ const MobileNav = ({ withHeroImage }) => {
                 </Link>
             )}
             <S.MenuButton onClick={() => setOpen(true)}>
-                <S.Burger />
+                <S.Burger $dark={!withHeroImage} />
             </S.MenuButton>
         </S.ClosedNav>
     );

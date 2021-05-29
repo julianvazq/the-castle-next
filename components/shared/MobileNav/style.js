@@ -2,7 +2,6 @@ import { CgClose } from 'react-icons/cg';
 import { RiMenu4Fill } from 'react-icons/ri';
 import styled from 'styled-components';
 import { cookieFont, mulishFont, uppercase } from '../../../styles/shared';
-import { DonateContainer } from '../../donate-page/Donate/style';
 
 export const ClosedNav = styled.nav`
     display: flex;
@@ -37,12 +36,8 @@ export const Logo = styled.img`
 export const MenuButton = styled.button``;
 
 export const Burger = styled(RiMenu4Fill)`
-    color: var(--white);
+    color: ${(props) => (props.$dark ? 'var(--purple-4)' : 'var(--white)')};
     font-size: 3rem;
-
-    ${DonateContainer} & {
-        color: var(--purple-4);
-    }
 `;
 
 export const Close = styled(CgClose)`

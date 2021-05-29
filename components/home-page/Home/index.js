@@ -1,24 +1,10 @@
-import useViewportWidth from '../../../hooks/useViewportWidth';
 import { Paragraph } from '../../../styles/shared';
-import Hero from '../../shared/Hero';
 import InfoSection from '../../shared/InfoSection';
 import * as S from './style';
 
 export default function Home() {
-    const width = useViewportWidth();
-    let title = (
-        <>
-            A sophisticated, uniquely styled venue <br /> in Syracuse, NY
-        </>
-    );
-
-    if (width && width < 850) {
-        title = 'A sophisticated, uniquely styled venue in Syracuse, NY';
-    }
-
     return (
         <>
-            <Hero title={title} />
             <InfoSection title='The Castle. Bringing the community together.'>
                 <S.TextGrid>
                     <Paragraph>

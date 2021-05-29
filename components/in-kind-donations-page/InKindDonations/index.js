@@ -1,13 +1,11 @@
 import React from 'react';
 import { Paragraph } from '../../../styles/shared';
-import Hero from '../../shared/Hero';
 import InfoSection from '../../shared/InfoSection';
 import Services from '../Services';
 
 const InKindDonations = () => {
     return (
         <>
-            <Hero title='In-Kind Donations' />
             <InfoSection title='We need your support!'>
                 <Paragraph $maxWidth={700}>
                     We are seeking donations from companies specializing in the

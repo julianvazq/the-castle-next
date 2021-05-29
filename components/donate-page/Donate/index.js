@@ -5,7 +5,6 @@ import {
     Paragraph,
     SectionHeader,
 } from '../../../styles/shared';
-import NavBar from '../../shared/NavBar';
 import PayPal from '../PayPal';
 import * as S from './style';
 
@@ -25,7 +24,6 @@ const Donate = () => {
     return (
         <PayPalScriptProvider options={initialOptions}>
             <S.DonateContainer>
-                <NavBar />
                 <MaxWidthContainer>
                     <S.ContentContainer>
                         <S.Info>

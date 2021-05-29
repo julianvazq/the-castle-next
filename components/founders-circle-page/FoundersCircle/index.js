@@ -1,13 +1,11 @@
 import React from 'react';
 import { Paragraph } from '../../../styles/shared';
-import Hero from '../../shared/Hero';
 import InfoSection from '../../shared/InfoSection';
 import Levels from './Levels';
 
 const FoundersCircle = () => {
     return (
         <>
-            <Hero title='Founders Circle Levels' />
             <InfoSection title='The Castle'>
                 <Paragraph>
                     The Founders Circle is an exclusive sponsorship package
