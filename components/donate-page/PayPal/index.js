@@ -5,12 +5,11 @@ import * as S from './style';
 
 const PayPal = () => {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
-    const [amount, setAmount] = useState(0.01);
+    const [amount, setAmount] = useState(5000);
     const [payerDetails, setPayerDetails] = useState(null);
     const [showSpinner, setShowSpinner] = useState(false);
     const [showError, setShowError] = useState(false);
     const [paymentHeight, setPaymentHeight] = useState('200px');
-    console.log(amount);
 
     useEffect(() => {
         if (amount) {
@@ -33,7 +32,7 @@ const PayPal = () => {
     };
 
     const createOrder = async (data, actions) => {
-        console.log(amount);
+        if (!amount) return;
         return actions.order.create({
             purchase_units: [
                 {
@@ -53,17 +52,15 @@ const PayPal = () => {
 
     const onApprove = (data, actions) => {
         return actions.order.capture().then((details) => {
-            console.log('onApprove ', details);
             setPayerDetails(details.payer);
         });
     };
 
     const onError = (err) => {
-        console.log('payment error', err);
+        console.log('On Error', err);
     };
 
     const onCancel = (data) => {
-        console.log('cancelled', data);
         setPaymentHeight('200px');
     };
 

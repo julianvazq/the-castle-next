@@ -9,13 +9,12 @@ import PayPal from '../PayPal';
 import * as S from './style';
 
 const initialOptions = {
-    // 'client-id': 'sb',
     /* Sandbox */
-    'client-id':
-        'AasQVTEe4oNhdXPBnK2k6e0bbw3kxJZMIHatU8Dt2bGBGEeT_B-bJ6RcmxKqdX_SLG4OXOzMZVOwWH1I',
-    /* Real */
     // 'client-id':
-    //     'AWK1HJxIagbxdwE-LGJ_qEiDkZ-YexHnqemcKsdREiMzQ7KYHN9H8xR1_G0KkPN3IeNNRouqcfxC3iHu',
+    //     'AasQVTEe4oNhdXPBnK2k6e0bbw3kxJZMIHatU8Dt2bGBGEeT_B-bJ6RcmxKqdX_SLG4OXOzMZVOwWH1I',
+    /* Real */
+    'client-id':
+        'AWK1HJxIagbxdwE-LGJ_qEiDkZ-YexHnqemcKsdREiMzQ7KYHN9H8xR1_G0KkPN3IeNNRouqcfxC3iHu',
     currency: 'USD',
     intent: 'capture',
 };

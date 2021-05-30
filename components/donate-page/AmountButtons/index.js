@@ -26,7 +26,6 @@ const AmountButtons = ({ changeAmount }) => {
     const onChange = (e) => {
         const numericAmount = Number(e.target.value.replace(/[ ,.$]/g, ''));
 
-        console.log(e.target.value);
         if (
             !/^[0-9]*$/.test(numericAmount) ||
             numericAmount.toString().length < 1
@@ -40,7 +39,6 @@ const AmountButtons = ({ changeAmount }) => {
     };
 
     useEffect(() => {
-        console.log(level);
         switch (level) {
             case 'the-chateau':
                 onAmountSelection(5000);
@@ -87,7 +85,7 @@ const AmountButtons = ({ changeAmount }) => {
 
 const amounts = [
     {
-        amount: 0.01,
+        amount: 5000,
         text: '$5,000',
     },
     {

@@ -7,10 +7,9 @@ import * as S from './style';
 
 const Layout = ({ children }) => {
     const router = useRouter();
-    console.log(router.pathname);
     return (
         <S.AppContainer>
-            {router.pathname !== '/donate' ? <Hero title='asd' /> : <NavBar />}
+            {router.pathname !== '/donate' ? <Hero /> : <NavBar />}
             {children}
             <Footer />
         </S.AppContainer>
