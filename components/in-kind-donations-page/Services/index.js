@@ -6,6 +6,10 @@ import * as S from './style';
 const Services = () => {
     const width = useViewportWidth();
 
+    if (!width) {
+        return null;
+    }
+
     if (width < 600) {
         return (
             <S.MobileServicesContainer>

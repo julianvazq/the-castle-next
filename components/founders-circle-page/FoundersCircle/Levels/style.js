@@ -7,13 +7,17 @@ import {
 } from '../../../../styles/shared';
 
 export const Grid = styled.section`
-    /* margin-bottom: 4rem; */
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
 
     @media screen and (min-width: 800px) {
+        margin-bottom: 4rem;
+    }
+
+    @media screen and (min-width: 1200px) {
         display: grid;
         grid-template-columns: 4fr 1fr 4fr;
+        margin-bottom: 0;
     }
 `;
 
@@ -30,7 +34,7 @@ export const GridItem = styled.div`
         padding: ${(props) => props.$content && '4rem 5rem'};
     }
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1200px) {
         padding: ${(props) => props.$content && '1rem 5rem'};
         background: none;
     }
@@ -39,7 +43,7 @@ export const GridItem = styled.div`
 export const Image = styled.img`
     display: block;
     background: pink;
-    /* height: 100%; */
+    width: 100%;
 
     ${GridItem} & {
         display: none;
@@ -51,9 +55,9 @@ export const Image = styled.img`
         }
     }
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 1200px) {
         ${GridItem} & {
-            display: block;
+            height: auto;
         }
     }
 `;
@@ -109,6 +113,9 @@ export const DonateLink = styled.a`
 
     @media screen and (min-width: 800px) {
         margin: 0;
+    }
+
+    @media screen and (min-width: 1200px) {
         color: var(--purple-4);
         background: var(--white);
     }

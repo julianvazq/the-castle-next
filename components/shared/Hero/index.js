@@ -29,7 +29,7 @@ const Hero = () => {
             case '/in-kind-donations':
                 return 'In-Kind Donations';
             default:
-                throw new Error('No hero title found.');
+                return 'Page Not Found';
         }
     }
 
