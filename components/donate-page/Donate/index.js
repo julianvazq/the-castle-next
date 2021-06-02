@@ -35,13 +35,6 @@ const Donate = () => {
                                 goal and achieve our vision. We are thrilled and
                                 thankful for your support. We appreciate you.
                             </Paragraph>
-                            <Paragraph>
-                                <span>
-                                    Checks made payable to Simply Ingram, LLC
-                                    and mailed to 4383 Colburn Drive Syracuse,
-                                    New York 13215
-                                </span>
-                            </Paragraph>
                         </S.Info>
                         <PayPal />
                     </S.ContentContainer>

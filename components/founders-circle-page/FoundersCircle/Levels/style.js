@@ -72,6 +72,7 @@ export const Triangle = styled(BsTriangleFill)`
     transform: rotate(90deg);
     color: var(--purple-4);
     font-size: 0.5rem;
+    flex: 0 0 8px;
 `;
 
 export const List = styled.ul`

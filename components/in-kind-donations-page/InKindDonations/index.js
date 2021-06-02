@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paragraph } from '../../../styles/shared';
+import { Paragraph, StyledLink } from '../../../styles/shared';
 import InfoSection from '../../shared/InfoSection';
 import Services from '../Services';
 
@@ -11,7 +11,11 @@ const InKindDonations = () => {
                     We are seeking donations from companies specializing in the
                     following areas or from individuals interested in
                     financially contributing to the items below. If you would
-                    like to contribute, please contact us.
+                    like to contribute, please{' '}
+                    <StyledLink href='/in-kind-donations#footer'>
+                        contact us
+                    </StyledLink>
+                    .
                 </Paragraph>
             </InfoSection>
             <Services />

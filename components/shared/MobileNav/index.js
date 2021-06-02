@@ -30,7 +30,7 @@ const MobileNav = ({ withHeroImage }) => {
             <S.OpenNav>
                 <S.InnerContainer>
                     <Link href='/'>
-                        <a>
+                        <a onClick={() => onLinkClick('/')}>
                             <S.Logo src='/assets/logo.svg' />
                         </a>
                     </Link>

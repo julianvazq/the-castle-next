@@ -43,3 +43,8 @@ export const Paragraph = styled.p`
         font-weight: 600;
     }
 `;
+
+export const StyledLink = styled.a`
+    color: var(--purple-4);
+    font-weight: 600;
+`;

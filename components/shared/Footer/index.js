@@ -16,28 +16,39 @@ const links = [
         path: '/in-kind-donations',
         text: 'In-Kind Donations',
     },
-    {
-        path: '/contact',
-        text: 'Contact Us',
-    },
 ];
 
 const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <>
-            <S.StyledFooter>
+            <S.StyledFooter id='footer'>
                 <MaxWidthContainer>
                     <S.Logo src='/assets/logo.svg' />
-                    <S.LinkContainer>
-                        {links.map((link) => (
-                            <S.StyledLink key={link.path}>
-                                <Link href={link.path}>
-                                    <a>{link.text}</a>
-                                </Link>
+                    <S.FlexContainer>
+                        <S.LinkContainer>
+                            {links.map((link) => (
+                                <S.StyledLink key={link.path}>
+                                    <Link href={link.path}>
+                                        <a>{link.text}</a>
+                                    </Link>
+                                </S.StyledLink>
+                            ))}
+                        </S.LinkContainer>
+                        <S.LinkContainer>
+                            <S.StyledLink>
+                                <a href='mailto:theingrams@thecastle603.com'>
+                                    theingrams@thecastle603.com
+                                </a>
                             </S.StyledLink>
-                        ))}
-                    </S.LinkContainer>
+                            <S.StyledLink>
+                                <a href='tel:315-863-1114'>315-863-1114</a>
+                            </S.StyledLink>
+                            <S.StyledLink>
+                                <a href='tel:315-450-2771'>315-450-2771</a>
+                            </S.StyledLink>
+                        </S.LinkContainer>
+                    </S.FlexContainer>
                     <S.SocialMediaLinks>
                         <li>
                             <a
