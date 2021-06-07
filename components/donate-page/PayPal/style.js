@@ -21,7 +21,11 @@ export const PaymentHeader = styled.h3`
     font-size: 1.5rem;
 `;
 
-export const CheckText = styled.p``;
+export const CheckText = styled.p`
+    span {
+        font-weight: 700;
+    }
+`;
 
 export const PaymentDisclaimer = styled.p`
     margin-bottom: -1rem;
