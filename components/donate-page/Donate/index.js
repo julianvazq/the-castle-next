@@ -12,9 +12,12 @@ const initialOptions = {
     /* Sandbox */
     // 'client-id':
     //     'AasQVTEe4oNhdXPBnK2k6e0bbw3kxJZMIHatU8Dt2bGBGEeT_B-bJ6RcmxKqdX_SLG4OXOzMZVOwWH1I',
-    /* Real */
+    /* Real JV */
+    // 'client-id':
+    //     'AWK1HJxIagbxdwE-LGJ_qEiDkZ-YexHnqemcKsdREiMzQ7KYHN9H8xR1_G0KkPN3IeNNRouqcfxC3iHu',
+    /* Real bank */
     'client-id':
-        'AWK1HJxIagbxdwE-LGJ_qEiDkZ-YexHnqemcKsdREiMzQ7KYHN9H8xR1_G0KkPN3IeNNRouqcfxC3iHu',
+        'ASJIqmbX02bQ7Flyb9Ke0kA_G5vDd5sW6GjyRNKoDdSsXISiL-QRByT0-i2vr8eQfc7iFTXO3xv-aoBZ',
     currency: 'USD',
     intent: 'capture',
 };
