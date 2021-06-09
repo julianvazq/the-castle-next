@@ -5,7 +5,7 @@ import * as S from './style';
 
 const PayPal = () => {
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
-    const [amount, setAmount] = useState(5000);
+    const [amount, setAmount] = useState(0);
     const [payerDetails, setPayerDetails] = useState(null);
     const [showSpinner, setShowSpinner] = useState(false);
     const [showError, setShowError] = useState(false);
