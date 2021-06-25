@@ -9,10 +9,16 @@ const NewsletterSignup = () => {
 
     const onSubmit = (e, subscribe) => {
         e.preventDefault();
-        console.log('email', email);
+
+        if (!email.length) return;
+
         console.log('subs', subscribe);
-        // subscribe({EMAIL: email});
-        // setEmail('');
+        try {
+            subscribe({ EMAIL: email });
+        } catch (error) {
+            console.log(error);
+        }
+        setEmail('');
     };
 
     return (
@@ -22,29 +28,38 @@ const NewsletterSignup = () => {
                 url={URL}
                 render={({ subscribe, status, message }) => (
                     <div>
-                        <S.StyledForm onSubmit={(e) => onSubmit(e, subscribe)}>
-                            {/* <SimpleForm onSubmitted={formData => subscribe(formData)} /> */}
-                            <input
-                                type='email'
-                                placeholder='Email'
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <button type='submit'>Subscribe</button>
-                        </S.StyledForm>
+                        {console.log(status)}
+                        {status !== 'success' && (
+                            <S.StyledForm
+                                onSubmit={(e) => onSubmit(e, subscribe)}
+                            >
+                                <input
+                                    type='email'
+                                    placeholder='Email'
+                                    name='email'
+                                    id='email'
+                                    aria-label='email'
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <button
+                                    type='submit'
+                                    disabled={status === 'sending'}
+                                >
+                                    Subscribe
+                                </button>
+                            </S.StyledForm>
+                        )}
                         {status === 'sending' && (
-                            <div style={{ color: 'blue' }}>Sending...</div>
+                            <S.Message>Subscribing...</S.Message>
                         )}
                         {status === 'error' && (
-                            <div
-                                style={{ color: 'red' }}
-                                dangerouslySetInnerHTML={{ __html: message }}
-                            />
+                            <S.Message>
+                                Sorry, something went wrong. Try again.
+                            </S.Message>
                         )}
                         {status === 'success' && (
-                            <div style={{ color: 'green' }}>
-                                Thank you for subscribing.
-                            </div>
+                            <S.Success>Thank you for subscribing.</S.Success>
                         )}
                     </div>
                 )}

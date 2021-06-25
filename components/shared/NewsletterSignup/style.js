@@ -41,3 +41,13 @@ export const StyledForm = styled.form`
         font-size: 0.875rem;
     }
 `;
+
+export const Message = styled.p`
+    margin-top: 1rem;
+    text-align: center;
+`;
+
+export const Success = styled(Message)`
+    color: var(--purple-4);
+    font-weight: 600;
+`;
