@@ -31,6 +31,10 @@ const NewsletterSignup = () => {
                         <>
                             {status !== 'success' && (
                                 <S.StyledForm
+                                    id='mc-embedded-subscribe-form'
+                                    name='mc-embedded-subscribe-form'
+                                    target='_blank'
+                                    novalidate
                                     onSubmit={(e) => onSubmit(e, subscribe)}
                                 >
                                     <input
@@ -44,6 +48,14 @@ const NewsletterSignup = () => {
                                             setEmail(e.target.value)
                                         }
                                     />
+                                    <S.HiddenInput aria-hidden='true'>
+                                        <input
+                                            type='text'
+                                            name='b_811a68d3cf08f3deed5afbdee_8abfc60f6e'
+                                            tabIndex='-1'
+                                            defaultValue=''
+                                        />
+                                    </S.HiddenInput>
                                     <button
                                         type='submit'
                                         disabled={status === 'sending'}

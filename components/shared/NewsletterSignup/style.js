@@ -46,6 +46,11 @@ export const StyledForm = styled.form`
     }
 `;
 
+export const HiddenInput = styled.div`
+    position: absolute;
+    left: -5000px;
+`;
+
 export const Message = styled.p`
     margin-top: 1rem;
     text-align: center;
