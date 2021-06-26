@@ -37,6 +37,11 @@ const Layout = ({ children }) => {
                 />
                 <meta name='msapplication-TileColor' content='#da532c' />
                 <meta name='theme-color' content='#ffffff' />
+                <meta
+                    name='description'
+                    content='The Castle will be a one of a kind multi-use facility that will host a variety of community centered activities which provide an arena for professional development, awareness building (jobs, health, nutrition, etc.) and social engagement. '
+                />
+                <meta property='og:image' content='/assets/logo.svg' />
             </Head>
             {router.pathname !== '/donate' ? <Hero /> : <NavBar />}
             {children}

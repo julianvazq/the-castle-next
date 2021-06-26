@@ -8,7 +8,7 @@ export default function Home() {
             <InfoSection title='The Castle. Bringing the community together.'>
                 <S.TextGrid>
                     <Paragraph>
-                        The Castle named for its royal like visual appearance
+                        The Castle, named for its royal like visual appearance,
                         will be a one of a kind multi-use facility that will
                         host a variety of community centered activities which
                         provide an arena for professional development, awareness
