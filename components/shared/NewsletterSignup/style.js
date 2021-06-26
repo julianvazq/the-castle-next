@@ -11,10 +11,13 @@ export const Text = styled.p`
     text-align: center;
 `;
 
-export const StyledForm = styled.form`
+export const FormContainer = styled.div`
     margin: 0 auto;
     margin-top: 2rem;
     max-width: 500px;
+`;
+
+export const StyledForm = styled.form`
     border-radius: 99px;
     background: var(--purple-2);
     display: flex;
@@ -24,6 +27,7 @@ export const StyledForm = styled.form`
         padding: 0.5rem 1rem;
         max-width: 350px;
         width: 100%;
+        outline: none;
 
         &::placeholder {
             ${uppercase}
@@ -45,6 +49,11 @@ export const StyledForm = styled.form`
 export const Message = styled.p`
     margin-top: 1rem;
     text-align: center;
+
+    a {
+        color: var(--purple-4);
+        font-weight: 600;
+    }
 `;
 
 export const Success = styled(Message)`
